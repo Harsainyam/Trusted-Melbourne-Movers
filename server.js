@@ -22,6 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // ─── STATIC FILES ────────────────────────────────────────────────────────────
 app.use('/images', express.static(path.join(__dirname, 'images')));
+app.use('/videos', express.static(path.join(__dirname, 'videos')));
 app.use('/CSS', express.static(path.join(__dirname, 'CSS')));
 app.use('/JS', express.static(path.join(__dirname, 'JS')));
 
