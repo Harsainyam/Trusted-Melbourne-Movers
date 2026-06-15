@@ -1,0 +1,2066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swift Movers Australia - Professional Moving Services</title>
+        <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/ResidentalMoves.css">
+    <style>
+     * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+
+ }
+
+ body {
+     font-family: 'Arial', sans-serif;
+     color: #333;
+     line-height: 1.6;
+ }
+
+ html::-webkit-scrollbar {
+     width: 10px;
+ }
+
+ html::-webkit-scrollbar-track {
+     background: rgb(155, 151, 151);
+     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+ }
+
+ html::-webkit-scrollbar-thumb {
+     background: #f15a24;
+     border-radius: 20px;
+ }
+ .afterpay-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #b2fce4; /* Afterpay mint */
+  color: #000;
+  border: 1px solid #9ee8d2;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.afterpay-logo {
+  height: 30px;
+  display: block;
+}
+
+
+ /* From Uiverse.io by adamgiebl */
+ .cssbuttons-io-button {
+     background: #0f5583;
+     color: white;
+     font-family: inherit;
+     padding: 0.35em;
+     padding-left: 1.2em;
+     font-size: 17px;
+     font-weight: 500;
+     border-radius: 0.9em;
+     border: none;
+     letter-spacing: 0.05em;
+     display: flex;
+     align-items: center;
+     box-shadow: inset 0 0 1.6em -0.6em #0f5583;
+     overflow: hidden;
+     position: relative;
+     height: 2.8em;
+     padding-right: 3.3em;
+     cursor: pointer;
+ }
+
+ .cssbuttons-io-button .icon {
+     background: white;
+     margin-left: 1em;
+     position: absolute;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 2.2em;
+     width: 2.2em;
+     border-radius: 0.7em;
+     box-shadow: 0.1em 0.1em 0.6em 0.2em #0f5583;
+     right: 0.3em;
+     transition: all 0.3s;
+ }
+
+ .cssbuttons-io-button:hover .icon {
+     width: calc(100% - 0.6em);
+ }
+
+ .cssbuttons-io-button .icon svg {
+     width: 1.1em;
+     transition: transform 0.3s;
+     color: #7b52b9;
+ }
+
+ .cssbuttons-io-button:hover .icon svg {
+     transform: translateX(0.1em);
+ }
+
+ .cssbuttons-io-button:active .icon {
+     transform: scale(0.95);
+ }
+
+
+ .header {
+     background: url('../images/header-desktop-bg.jpg');
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+     position: sticky;
+     top: 0;
+     z-index: 1000;
+     transition: all 0.3s ease;
+ }
+
+ .container {
+     max-width: 1400px;
+     margin: 0 auto;
+     padding: 0 20px;
+ }
+  .container1 {
+     max-width: 1400px;
+     margin: 0 auto;
+     padding: 0 20px;
+     display: flex;
+     justify-content: space-around;
+     flex-wrap: wrap;
+ }
+
+ .header-content {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 15px 0;
+     gap: 20px;
+ }
+
+ .logo img {
+    border-radius: 10%;
+    height: 100px;
+     transition: transform 0.3s;
+ }
+
+ .logo:hover img {
+     transform: scale(1.05);
+ }
+
+ /* Navigation */
+ .main-nav {
+     flex: 1;
+     display: flex;
+     justify-content: center;
+ }
+
+ .nav-list {
+     display: flex;
+     list-style: none;
+     gap: 5px;
+     margin: 0;
+     padding: 0;
+ }
+
+ .nav-item {
+     position: relative;
+ }
+
+ .nav-link {
+     display: flex;
+     align-items: center;
+     padding: 9px 14px;
+     color: #0f5583;
+     text-decoration: none;
+     font-weight: 700;
+     font-size: 18px;
+     border-radius: 8px;
+     transition: all 0.3s;
+     position: relative;
+     white-space: nowrap;
+ }
+
+ .nav-link::before {
+     content: '';
+     position: absolute;
+     bottom: 8px;
+     left: 18px;
+     right: 18px;
+     height: 2px;
+     background: #f15a24;
+     transform: scaleX(0);
+     transition: transform 0.3s;
+ }
+
+ .nav-link:hover {
+     color: #f15a24;
+     background: rgba(241, 90, 36, 0.05);
+ }
+
+ .nav-link:hover::before {
+     transform: scaleX(1);
+ }
+
+ .dropdown-icon {
+     transition: transform 0.3s;
+ }
+
+ .nav-item.has-dropdown:hover .dropdown-icon {
+     transform: rotate(180deg);
+ }
+
+ /* Dropdown Styles */
+ .dropdown,
+ .mega-dropdown {
+     position: absolute;
+     top: 100%;
+     left: 0;
+     background: white;
+     border-radius: 12px;
+     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+     opacity: 0;
+     visibility: hidden;
+     transform: translateY(10px);
+     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+     margin-top: 10px;
+     overflow: hidden;
+ }
+
+ .dropdown {
+     min-width: 280px;
+     padding: 8px;
+ }
+
+ .mega-dropdown {
+     left: 50%;
+     transform: translateX(-50%) translateY(10px);
+     min-width: 700px;
+ }
+
+ .nav-item:hover .dropdown,
+ .nav-item:hover .mega-dropdown {
+     opacity: 1;
+     visibility: visible;
+     transform: translateY(0);
+ }
+
+ .nav-item:hover .mega-dropdown {
+     transform: translateX(-50%) translateY(0);
+ }
+
+ .dropdown-content {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 20px;
+     padding: 25px;
+ }
+
+ .dropdown-column h4 {
+     font-size: 11px;
+     text-transform: uppercase;
+     color: #999;
+     margin-bottom: 15px;
+     font-weight: 700;
+     letter-spacing: 1px;
+ }
+
+ .dropdown-link {
+     display: flex;
+     align-items: flex-start;
+     gap: 12px;
+     padding: 12px 15px;
+     border-radius: 8px;
+     text-decoration: none;
+     color: #333;
+     transition: all 0.2s;
+     margin-bottom: 5px;
+ }
+
+ .dropdown-link:hover {
+     background: linear-gradient(135deg, rgba(241, 90, 36, 0.1), rgba(255, 138, 92, 0.1));
+     transform: translateX(5px);
+ }
+
+ .link-icon {
+     font-size: 24px;
+     flex-shrink: 0;
+     width: 36px;
+     height: 36px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background: rgba(241, 90, 36, 0.1);
+     border-radius: 8px;
+     transition: all 0.2s;
+ }
+
+ .dropdown-link:hover .link-icon {
+     background: #f15a24;
+     transform: scale(1.1);
+ }
+
+ .dropdown-link strong {
+     display: block;
+     font-size: 14px;
+     color: #1a1a1a;
+     margin-bottom: 2px;
+ }
+
+ .dropdown-link p {
+     font-size: 12px;
+     color: #666;
+     margin: 0;
+     line-height: 1.4;
+ }
+
+ /* Header Actions */
+ .header-actions {
+     display: flex;
+     align-items: center;
+     gap: 12px;
+ }
+
+ .phone-btn {
+     display: flex;
+     align-items: center;
+     gap: 8px;
+     padding: 10px 18px;
+     background: linear-gradient(135deg, #f1c124, #f1c124);
+     color: white;
+     text-decoration: none;
+     border-radius: 10px;
+     font-weight: 600;
+     font-size: 13px;
+     transition: all 0.3s;
+ }
+
+ .phone-btn:hover {
+     transform: translateY(-2px);
+     box-shadow: 0 6px 20px rgba(241, 90, 36, 0.4);
+ }
+
+ .quote-btn {
+     padding: 10px 20px;
+     background: white;
+     color: #00a651;
+     border: 2px solid #00a651;
+     text-decoration: none;
+     border-radius: 10px;
+     font-weight: 700;
+     font-size: 13px;
+     transition: all 0.3s;
+     text-transform: uppercase;
+     letter-spacing: 0.5px;
+     white-space: nowrap;
+ }
+
+ .quote-btn:hover {
+     background: #00a651;
+     color: white;
+     transform: translateY(-2px);
+     box-shadow: 0 4px 15px rgba(0, 166, 81, 0.3);
+ }
+
+ /* Mobile Toggle */
+ .mobile-toggle {
+     display: none;
+     flex-direction: column;
+     gap: 5px;
+     background: none;
+     border: none;
+     cursor: pointer;
+     padding: 10px;
+     z-index: 1001;
+ }
+
+ .mobile-toggle span {
+     width: 25px;
+     height: 3px;
+     background: #333;
+     border-radius: 3px;
+     transition: all 0.3s;
+ }
+
+ .mobile-toggle.active span:nth-child(1) {
+     transform: rotate(45deg) translate(8px, 8px);
+ }
+
+ .mobile-toggle.active span:nth-child(2) {
+     opacity: 0;
+ }
+
+ .mobile-toggle.active span:nth-child(3) {
+     transform: rotate(-45deg) translate(7px, -7px);
+ }
+
+ /* Mobile Menu */
+ /* Fix for mobile menu scrolling */
+ .mobile-menu {
+     display: none;
+     flex-direction: column;
+     background: white;
+     max-height: 0;
+     overflow: hidden;
+     transition: max-height 0.4s ease;
+     position: relative;
+ }
+
+ .mobile-menu.active {
+     display: flex;
+     max-height: calc(100vh - 80px);
+     overflow-y: auto;
+     padding-bottom: 20px;
+     -webkit-overflow-scrolling: touch;
+ }
+
+ /* Prevent body scroll when mobile menu is open */
+ body.menu-open {
+     overflow: hidden;
+     position: fixed;
+     width: 100%;
+ }
+
+ /* Mobile Menu Updates */
+ .mobile-menu-item.has-submenu {
+     position: relative;
+ }
+
+
+ .mobile-link-wrapper {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 15px 20px;
+     cursor: pointer;
+     transition: all 0.3s;
+     user-select: none;
+ }
+
+ .mobile-link-wrapper:active {
+     background: rgba(241, 90, 36, 0.1);
+ }
+
+ .mobile-link-wrapper .mobile-link {
+     color: #333;
+     font-weight: 600;
+     font-size: 16px;
+     flex: 1;
+ }
+
+ .mobile-arrow {
+     transition: transform 0.3s;
+     flex-shrink: 0;
+ }
+
+ .mobile-menu-item.has-submenu.active .mobile-arrow {
+     transform: rotate(180deg);
+ }
+
+ .mobile-link {
+     display: block;
+     padding: 15px 20px;
+     color: #333;
+     text-decoration: none;
+     font-weight: 600;
+     font-size: 16px;
+     transition: all 0.3s;
+
+ }
+
+ .mobile-link:active {
+     background: rgba(241, 90, 36, 0.1);
+ }
+
+ .mobile-dropdown-content {
+     max-height: 0;
+     overflow: hidden;
+     background: #f8f8f8;
+     transition: max-height 0.3s ease;
+ }
+
+ .mobile-menu-item.has-submenu.active .mobile-dropdown-content {
+     max-height: 500px;
+ }
+
+ .mobile-dropdown-link {
+     display: block;
+     padding: 12px 20px 12px 40px;
+     color: #666;
+     text-decoration: none;
+     font-size: 14px;
+     transition: all 0.2s;
+ }
+
+ .mobile-dropdown-link:active {
+     background: rgba(241, 90, 36, 0.1);
+     color: #f15a24;
+ }
+
+ .mobile-menu-actions {
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+     padding: 20px;
+ }
+
+ .mobile-phone-btn {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 10px;
+     padding: 15px;
+     background: linear-gradient(135deg, #f15a24, #ff6b3d);
+     color: white;
+     text-decoration: none;
+     border-radius: 10px;
+     font-weight: 700;
+     font-size: 16px;
+ }
+
+ .mobile-quote-btn {
+     padding: 15px;
+     background: #00a651;
+     color: white;
+     text-align: center;
+     text-decoration: none;
+     border-radius: 10px;
+     font-weight: 700;
+     font-size: 16px;
+     text-transform: uppercase;
+ }
+ /* Responsive Breakpoints */
+ @media (max-width: 1200px) {
+     .mega-dropdown {
+         min-width: 600px;
+     }
+
+     .dropdown-content {
+         grid-template-columns: repeat(2, 1fr);
+     }
+
+     .nav-link {
+         padding: 10px 14px;
+         font-size: 13px;
+     }
+ }
+
+ @media (max-width: 1024px) {
+     
+
+     .phone-btn {
+         padding: 10px;
+     }
+
+     .quote-btn {
+         padding: 10px 16px;
+         font-size: 12px;
+     }
+ }
+
+ @media (max-width: 900px) {
+     .main-nav {
+         display: none;
+     }
+
+     .header-actions {
+         gap: 8px;
+     }
+
+     .mobile-toggle {
+         display: flex;
+     }
+
+     .mobile-menu {
+         display: flex;
+     }
+ }
+
+ @media (max-width: 640px) {
+     .logo img {
+         height: 40px;
+     }
+
+     .header-content {
+         padding: 12px 0;
+     }
+
+     .header-actions .quote-btn {
+         display: none;
+     }
+ }
+
+ @media (max-width: 480px) {
+     .container {
+         padding: 0 15px;
+     }
+
+     .phone-btn svg {
+         width: 16px;
+         height: 16px;
+     }
+ }
+
+ .hero {
+     background: url("/images/truckk.jpeg");
+     background-size: cover;
+     background-position: center;
+     color: white;
+     padding: 100px 0;
+     text-align: center;
+     height: auto;
+ }
+
+ .hero h1 {
+     font-size: 48px;
+     margin-bottom: 20px;
+ }
+
+ .hero h1 span {
+     color: #f15a24;
+ }
+
+ .review-badges {
+     display: flex;
+     justify-content: center;
+     gap: 30px;
+     margin: 40px 0;
+ }
+
+ .quote-form {
+     background-color: rgba(255, 255, 255, 0.3);
+     -webkit-backdrop-filter: blur(10px);
+     /* For Safari support */
+     backdrop-filter: blur(10px);
+     padding: 50px 40px;
+     border-radius: 16px;
+     max-width: 700px;
+     margin: 0 auto;
+     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+ }
+
+ .quote-form h2 {
+     font-size: 32px;
+     color: #1a1a1a;
+     margin-bottom: 8px;
+     font-weight: 700;
+     text-align: center;
+ }
+
+ .form-subtitle {
+     text-align: center;
+     color: #666;
+     font-size: 15px;
+     margin-bottom: 40px;
+ }
+
+ .form-grid {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 30px;
+     margin-bottom: 30px;
+ }
+
+ .input-group {
+     position: relative;
+ }
+
+ .input-group.full-width {
+     grid-column: 1 / -1;
+ }
+
+ .input-group input,
+ .input-group textarea {
+     width: 100%;
+     padding: 12px 0;
+     font-size: 16px;
+     color: #1a1a1a;
+     border: none;
+     border-bottom: 2px solid #e0e0e0;
+     outline: none;
+     background: transparent;
+     transition: all 0.3s;
+ }
+
+ input[type=date]:required:invalid::-webkit-datetime-edit {
+     color: transparent;
+ }
+
+ input[type=date]:focus::-webkit-datetime-edit {
+     color: black !important;
+ }
+
+ .input-group textarea {
+     resize: none;
+     font-family: inherit;
+ }
+
+ .input-group label {
+     position: absolute;
+     left: 0;
+     top: 12px;
+     font-size: 16px;
+     color: #3b3b3b;
+     pointer-events: none;
+     transition: all 0.3s;
+ }
+
+ .input-group input:focus~label,
+ .input-group input:valid~label,
+ .input-group textarea:focus~label,
+ .input-group textarea:valid~label {
+     top: -20px;
+     font-size: 12px;
+     color: #f15a24;
+     font-weight: 600;
+ }
+
+ .input-border {
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 0;
+     height: 2px;
+     background: linear-gradient(90deg, #f15a24, #ff8a5c);
+     transition: width 0.4s;
+ }
+
+ .input-group input:focus~.input-border,
+ .input-group textarea:focus~.input-border {
+     width: 100%;
+ }
+
+ /* Custom Select Styles */
+ .custom-select-wrapper {
+     margin-bottom: 30px;
+ }
+
+ .custom-select {
+     position: relative;
+     user-select: none;
+ }
+
+ .custom-select-trigger {
+     position: relative;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 16px 20px;
+     font-size: 16px;
+     color: #1a1a1a;
+     background: #f8f8f8;
+     border: 2px solid #e0e0e0;
+     border-radius: 12px;
+     cursor: pointer;
+     transition: all 0.3s;
+ }
+
+ .custom-select-trigger:hover {
+     border-color: #f15a24;
+     background: #fff;
+ }
+
+ .custom-select.open .custom-select-trigger {
+     border-color: #f15a24;
+     background: #fff;
+     border-radius: 12px 12px 0 0;
+ }
+
+ .custom-select-trigger span {
+     color: #666;
+ }
+
+ .custom-select.open .custom-select-trigger span,
+ .custom-select-trigger.selected span {
+     color: #1a1a1a;
+ }
+
+ .arrow {
+     width: 0;
+     height: 0;
+     border-left: 6px solid transparent;
+     border-right: 6px solid transparent;
+     border-top: 6px solid #999;
+     transition: transform 0.3s;
+ }
+
+ .custom-select.open .arrow {
+     transform: rotate(180deg);
+     border-top-color: #f15a24;
+ }
+
+ .custom-options {
+     position: absolute;
+     display: none;
+     top: 100%;
+     left: 0;
+     right: 0;
+     background: white;
+     border: 2px solid #f15a24;
+     border-top: none;
+     border-radius: 0 0 12px 12px;
+     max-height: 250px;
+     overflow-y: auto;
+     z-index: 10;
+     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+ }
+
+ .custom-select.open .custom-options {
+     display: block;
+ }
+
+ .custom-option {
+     display: block;
+     padding: 14px 20px;
+     font-size: 15px;
+     color: #333;
+     cursor: pointer;
+     transition: all 0.2s;
+ }
+
+ .custom-option:hover {
+     background: #fff5f0;
+     color: #f15a24;
+     padding-left: 25px;
+ }
+
+ .custom-option.selected {
+     background: #f15a24;
+     color: white;
+     font-weight: 600;
+ }
+
+ /* Submit Button */
+ .submit-button {
+     width: 100%;
+     padding: 18px;
+     font-size: 16px;
+     font-weight: 700;
+     color: white;
+     background: linear-gradient(135deg, #f15a24 0%, #ff6b3d 100%);
+     border: none;
+     border-radius: 12px;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 10px;
+     transition: all 0.3s;
+     box-shadow: 0 4px 15px rgba(241, 90, 36, 0.3);
+     text-transform: uppercase;
+     letter-spacing: 1px;
+ }
+
+ .submit-button:hover {
+     transform: translateY(-2px);
+     box-shadow: 0 6px 25px rgba(241, 90, 36, 0.4);
+ }
+
+ .submit-button:active {
+     transform: translateY(0);
+ }
+
+ .submit-button svg {
+     transition: transform 0.3s;
+ }
+
+ .submit-button:hover svg {
+     transform: translateX(5px);
+ }
+
+ @media (max-width: 768px) {
+     .form-grid {
+         grid-template-columns: 1fr;
+         gap: 25px;
+     }
+
+     .quote-form {
+         padding: 35px 25px;
+     }
+ }
+
+ .content-section {
+     text-align: center;
+     padding: 60px 0;
+ }
+
+ .content-section h2 {
+     font-size: 36px;
+     margin-bottom: 20px;
+     color: #333;
+ }
+
+ .content-section h3 {
+     font-size: 32px;
+     margin: 30px 0 15px;
+     color: #0f5583;
+ }
+
+ .content-section p {
+     font-size: 16px;
+     margin-bottom: 15px;
+     line-height: 1.8;
+ }
+
+ .services-grid {
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+     gap: 40px;
+     justify-items: center;
+ }
+
+
+ .service-card {
+     width: 40em;
+     height: 380px;
+     border-radius: 3px;
+     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+     overflow: hidden;
+     text-decoration: none;
+     color: inherit;
+     display: block;
+     position: relative;
+ }
+
+ @media (max-width: 900px) {
+     .service-card {
+         width: 350px;
+     }
+ }
+
+ .service-card .thumb {
+     width: 100%;
+     height: 260px;
+     background-size: cover;
+     background-position: center;
+     border-radius: 3px;
+ }
+
+ .service-card-content {
+     width: 100%;
+     height: 382px;
+     position: relative;
+     padding: 14px 24px;
+     background: white;
+     transition: 0.4s 0.15s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+ }
+
+ .service-card h3 {
+     position: relative;
+     margin: 10px 0;
+     letter-spacing: 2px;
+     color: #152536;
+     font-size: 1rem;
+     text-transform: uppercase;
+     font-weight: bold;
+ }
+
+ .service-card .service-type {
+     margin-bottom: 10px;
+     text-transform: uppercase;
+     font-size: 0.85rem;
+     color: rgba(21, 37, 54, 0.7);
+ }
+
+ .service-card .service-brief {
+     display: inline-block;
+     margin-bottom: 24px;
+     padding-bottom: 24px;
+     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+     opacity: 0;
+     font-size: 0.85rem;
+     text-transform: uppercase;
+     color: rgba(21, 37, 54, 0.7);
+     transition: 0.5s 0.25s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+ }
+
+ .service-card p {
+     font-family: 'Georgia', serif;
+     line-height: 2;
+     font-size: 0.95rem;
+     color: rgba(21, 37, 54, 0.7);
+     opacity: 0;
+     margin: 0;
+     transition: 0.5s 0.25s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+ }
+
+ .service-card .learn-more {
+     position: absolute;
+     left: 0;
+     bottom: 0;
+     margin: 10px 0;
+     padding: 20px 24px;
+     letter-spacing: 1px;
+     color: #4e958b;
+     font-size: 0.9rem;
+     text-transform: uppercase;
+     cursor: pointer;
+     opacity: 0;
+     font-weight: bold;
+     transition: 0.5s 0.25s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+ }
+
+ .service-card:hover .service-card-content {
+     transform: translateY(-260px);
+ }
+
+ .service-card:hover .service-brief,
+ .service-card:hover p,
+ .service-card:hover .learn-more {
+     opacity: 1;
+ }
+
+ .main-con {
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+ }
+
+ .content-section2 {
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+     background-color: #e2ebf0
+ }
+
+ .content1 {
+     width: 50em;
+     height: auto;
+     padding: 20px;
+     color: rgb(39, 39, 39);
+     padding: 50px;
+ }
+
+ .content2 {
+     width: 35em;
+     justify-content: center;
+     background-color: #badef0;
+     padding: 20px;
+     color: rgb(53, 51, 51);
+     padding: 50px;
+ }
+
+ @media (max-width: 900px) {
+     .content1 {
+         width: 26em;
+     }
+
+     .content2 {
+         width: 26em;
+     }
+ }
+
+ .cont-head {
+     font-size: 40px;
+     font-weight: bolder;
+     margin-bottom: 20px;
+     color: #0f5583;
+     text-align: center;
+
+ }
+
+ .cont-con {
+     font-size: 16px;
+     margin-bottom: 15px;
+     line-height: 1.8;
+     text-align: justify;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+
+ ol {
+     padding-bottom: 20px;
+     padding-left: 40px;
+ }
+
+ ol li::marker {
+     color: red;
+     font-size: 20px;
+     font-weight: 700;
+ }
+
+ ol li {
+     color: #0f5583;
+     font-weight: 700;
+     padding-bottom: 10px;
+ }
+
+ .content-img {
+     width: 100%;
+     margin-top: 20px;
+     border-radius: 12px;
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+ }
+
+ .video-sec {
+     background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .5)), url(../images/workerintruck.png);
+     background-size: cover;
+
+     background-repeat: no-repeat;
+     height: 40em;
+
+
+ }
+
+ .video-sec-p {
+     color: rgb(255, 255, 255);
+     font-size: 50px;
+     font-weight: bolder;
+     text-align: center;
+     padding-top: 3em;
+ }
+
+ .right {
+     display: inline-block;
+     width: 6em;
+     height: 6em;
+     border: 0.5em solid #ffffff;
+     border-radius: 50%;
+     opacity: 70%;
+
+ }
+
+ a {
+     display: inline-block;
+     border-radius: 50%;
+ }
+
+ a:hover .left,
+ a:hover .top,
+ a:hover .bottom,
+ a:hover .right {
+     opacity: 100%;
+ }
+
+ a:hover .left:after,
+ a:hover .top:after,
+ a:hover .bottom:after,
+ a:hover .right:after {
+     opacity: 100%;
+ }
+
+ .right:after {
+     content: '';
+     display: inline-block;
+     width: 1.4em;
+     height: 1.4em;
+     opacity: 0.7;
+     border-top: 0.5em solid #ffffff;
+     border-right: 0.5em solid #ffffff;
+     -moz-transform: rotate(45deg);
+     -webkit-transform: rotate(45deg);
+     transform: rotate(45deg);
+     margin-top: 1.5em;
+     margin-left: 1.2em;
+ }
+
+ .image-text-section {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 40px;
+     align-items: center;
+     padding: 60px 0;
+ }
+
+
+ .image-text-section img {
+     width: 100%;
+     border-radius: 12px;
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+ }
+
+ .image-text-section .text-content h2 {
+     font-size: 32px;
+     margin-bottom: 20px;
+     color: #333;
+ }
+
+ .image-text-section .text-content p {
+     font-size: 16px;
+     margin-bottom: 15px;
+     line-height: 1.8;
+ }
+
+ .textsec {
+     display: flex;
+     justify-content: center;
+ }
+
+ .textsecd {
+     padding: 40px;
+     width: 70%;
+ }
+
+ .textsecb {
+     display: flex;
+     justify-content: center;
+ }
+
+ .getestimate {
+     background: #f15a24;
+     color: white;
+     padding: 60px 0;
+     text-align: center;
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+ }
+
+ .testimonial-section {
+     text-align: center;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     padding: 40px;
+ }
+
+ .testmonsec1 {
+     width: 50%;
+     text-align: left;
+     color: black;
+ }
+
+ .testmonsec2 {
+     width: 50%;
+     text-align: left;
+     color: black;
+     display: flex;
+     justify-content: center;
+ }
+
+ @media (max-width :900px) {
+     .testmonsec1 {
+         width: 30em;
+     }
+
+     .testmonsec2 {
+         width: 30em;
+     }
+ }
+
+ .testphoto {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+ }
+
+ .testname {
+     text-align: right;
+     margin-right: 70px;
+ }
+
+ .reviews-section {
+     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="400"><rect fill="%23222" width="1920" height="400"/></svg>');
+     background-size: cover;
+     background-position: center;
+     padding: 60px 0;
+     text-align: center;
+     color: white;
+ }
+
+ .reviews-section h2 {
+     margin-bottom: 30px;
+     font-size: 36px;
+ }
+
+ .review-platforms {
+     display: flex;
+     justify-content: center;
+     gap: 50px;
+     flex-wrap: wrap;
+ }
+
+ .review-platform {
+     text-align: center;
+ }
+
+ .review-platform img {
+     height: 50px;
+     margin-bottom: 10px;
+ }
+
+ .review-platform p {
+     font-size: 18px;
+     font-weight: bold;
+ }
+
+.footer {
+    background: linear-gradient(to bottom, #082d46 0%, #041e30 100%);
+    color: #e0e0e0;
+    padding: 80px 0 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+@media (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+@media (max-width: 640px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+.footer-brand {
+    max-width: 300px;
+}
+
+.footer-logo {
+    border-radius: 10%;
+    height:250px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.footer-logo:hover {
+    transform: scale(1.02);
+}
+
+.footer-tagline {
+    color: #999;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+.footer h3 {
+    color: #f15a24;
+    margin-bottom: 20px;
+    font-size: 19px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.footer h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background: #f15a24;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer ul li {
+    margin-bottom: 12px;
+}
+
+.footer a {
+    color: #b0b0b0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 19px;
+}
+
+.footer-links a:hover {
+    color: #f15a24;
+    transform: translateX(5px);
+}
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: rgba(241, 90, 36, 0.1);
+    border: 2px solid rgba(241, 90, 36, 0.3);
+    border-radius: 50%;
+    color: #f15a24;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: #f15a24;
+    border-color: #f15a24;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(241, 90, 36, 0.3);
+}
+
+.footer-contact .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+    color: #b0b0b0;
+    font-size: 18px;
+}
+
+.footer-contact .contact-item svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: #f15a24;
+}
+
+.footer-contact .contact-item a {
+    color: #b0b0b0;
+}
+
+.footer-contact .contact-item a:hover {
+    color: #f15a24;
+    transform: none;
+}
+
+.license-info {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 18px;
+    color: #777;
+    line-height: 1.6;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #777;
+    font-size: 14px;
+}
+
+.footer-bottom-links {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.footer-bottom-links a {
+    color: #777;
+    font-size: 18px;
+    padding: 0 8px;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+    color: #f15a24;
+    transform: none;
+}
+
+.footer-bottom-links .separator {
+    color: #444;
+}
+
+@media (max-width: 640px) {
+    .footer {
+        padding: 60px 0 0;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-bottom-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+ .mobile-menu {
+     display: none;
+ }
+
+ @media (max-width: 768px) {
+     .header-top {
+         flex-direction: column;
+         gap: 20px;
+     }
+
+     nav ul {
+         flex-direction: column;
+         gap: 10px;
+     }
+
+     .hero h1 {
+         font-size: 32px;
+     }
+
+     .image-text-section {
+         grid-template-columns: 1fr;
+     }
+
+     .review-platforms {
+         gap: 30px;
+     }
+
+     .footer-grid {
+         grid-template-columns: 1fr;
+     }
+
+     .services-grid {
+         grid-template-columns: 1fr;
+     }
+ }
+</style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/logo.png"
+                        alt="New City Moving Logo">
+                </div>
+
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item has-dropdown">
+                            <a href="#services" class="nav-link">
+                                Moving Services
+                                <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12">
+                                    <path fill="currentColor" d="M6 9L1 4h10z" />
+                                </svg>
+                            </a>
+                            <div class="mega-dropdown">
+                                <div class="dropdown-content">
+                                    <div class="dropdown-column">
+                                        <h4>Local Services</h4>
+                                        <a href="ResidentialMoves.html" class="dropdown-link">
+                                            <span class="link-icon">🏠</span>
+                                            <div>
+                                                <strong>Residential Moves</strong>
+                                                <p>Professional home moving</p>
+                                            </div>
+                                        </a>
+                                        <a href="Apartmentmoves.html" class="dropdown-link">
+                                            <span class="link-icon">🏢</span>
+                                            <div>
+                                                <strong>Apartment Movers</strong>
+                                                <p>Specialized apartment service</p>
+                                            </div>
+                                        </a>
+                                        <a href="Seniormoves.html" class="dropdown-link">
+                                            <span class="link-icon">👴</span>
+                                            <div>
+                                                <strong>Senior Moves</strong>
+                                                <p>Compassionate senior care</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="dropdown-column">
+                                        <h4>Distance Moving</h4>
+                                        <a href="#" class="dropdown-link">
+                                            <span class="link-icon">🚚</span>
+                                            <div>
+                                                <strong>Long Distance</strong>
+                                                <p>Cross-country relocations</p>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="dropdown-link">
+                                            <span class="link-icon">🗺️</span>
+                                            <div>
+                                                <strong>Interstate Moves</strong>
+                                                <p>State-to-state service</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="dropdown-column">
+                                        <h4>Specialty Services</h4>
+                                        <a href="#" class="dropdown-link">
+                                            <span class="link-icon">💼</span>
+                                            <div>
+                                                <strong>Office Moving</strong>
+                                                <p>Business relocation experts</p>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="dropdown-link">
+                                            <span class="link-icon">⚡</span>
+                                            <div>
+                                                <strong>Last-Minute Movers</strong>
+                                                <p>Emergency moving service</p>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="dropdown-link">
+                                            <span class="link-icon">📦</span>
+                                            <div>
+                                                <strong>Loading/Unloading</strong>
+                                                <p>Labor-only services</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#packing" class="nav-link">Packing Services</a>
+                        </li>
+
+                        <li class="nav-item has-dropdown">
+                            <a href="#storage" class="nav-link">
+                                Storage Services
+                                <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12">
+                                    <path fill="currentColor" d="M6 9L1 4h10z" />
+                                </svg>
+                            </a>
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-link">
+                                    <span class="link-icon">📦</span>
+                                    <div>
+                                        <strong>Full Service Storage</strong>
+                                        <p>Complete storage solutions</p>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-link">
+                                    <span class="link-icon">⏱️</span>
+                                    <div>
+                                        <strong>Short-Term Storage</strong>
+                                        <p>Flexible short-term options</p>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-link">
+                                    <span class="link-icon">📅</span>
+                                    <div>
+                                        <strong>Long-Term Storage</strong>
+                                        <p>Secure long-term facilities</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item has-dropdown">
+                            <a href="#about" class="nav-link">
+                                About Us
+                                <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12">
+                                    <path fill="currentColor" d="M6 9L1 4h10z" />
+                                </svg>
+                            </a>
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-link">
+                                    <span class="link-icon">👥</span>
+                                    <div>
+                                        <strong>Meet the Team</strong>
+                                        <p>Our expert movers</p>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-link">
+                                    <span class="link-icon">⭐</span>
+                                    <div>
+                                        <strong>Testimonials</strong>
+                                        <p>Customer success stories</p>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-link">
+                                    <span class="link-icon">💼</span>
+                                    <div>
+                                        <strong>Careers</strong>
+                                        <p>Join our team</p>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-link">
+                                    <span class="link-icon">📝</span>
+                                    <div>
+                                        <strong>Blog</strong>
+                                        <p>Moving tips & news</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#area" class="nav-link">Service Area</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <a href="tel:+18723142148" class="phone-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                        </svg>
+                        <span class="phone-text">1-872-314-2148</span>
+                    </a>
+                    <a href="#sidebar-form  " class="quote-btn">Request a Quote</a>
+                </div>
+
+                <button class="mobile-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <!-- Mobile Menu -->
+            <div class="mobile-menu">
+                <div class="mobile-menu-item has-submenu">
+                    <div class="mobile-link-wrapper">
+                        <span class="mobile-link">Moving Services</span>
+                        <svg class="mobile-arrow" width="12" height="12" viewBox="0 0 12 12">
+                            <path fill="currentColor" d="M6 9L1 4h10z" />
+                        </svg>
+                    </div>
+                    <div class="mobile-dropdown-content">
+                        <a href="#" class="mobile-dropdown-link">🏠 Residential Moves</a>
+                        <a href="#" class="mobile-dropdown-link">🏢 Apartment Movers</a>
+                        <a href="#" class="mobile-dropdown-link">👴 Senior Moves</a>
+                        <a href="#" class="mobile-dropdown-link">🚚 Long Distance</a>
+                        <a href="#" class="mobile-dropdown-link">🗺️ Interstate Moves</a>
+                        <a href="#" class="mobile-dropdown-link">💼 Office Moving</a>
+                        <a href="#" class="mobile-dropdown-link">⚡ Last-Minute Movers</a>
+                        <a href="#" class="mobile-dropdown-link">📦 Loading/Unloading</a>
+                    </div>
+                </div>
+
+                <div class="mobile-menu-item">
+                    <a href="#packing" class="mobile-link" style="margin-left: 19px;">Packing Services</a>
+                </div>
+
+                <div class="mobile-menu-item has-submenu">
+                    <div class="mobile-link-wrapper">
+                        <span class="mobile-link">Storage Services</span>
+                        <svg class="mobile-arrow" width="12" height="12" viewBox="0 0 12 12">
+                            <path fill="currentColor" d="M6 9L1 4h10z" />
+                        </svg>
+                    </div>
+                    <div class="mobile-dropdown-content">
+                        <a href="#" class="mobile-dropdown-link">📦 Full Service Storage</a>
+                        <a href="#" class="mobile-dropdown-link">⏱️ Short-Term Storage</a>
+                        <a href="#" class="mobile-dropdown-link">📅 Long-Term Storage</a>
+                    </div>
+                </div>
+
+                <div class="mobile-menu-item has-submenu">
+                    <div class="mobile-link-wrapper">
+                        <span class="mobile-link">About Us</span>
+                        <svg class="mobile-arrow" width="12" height="12" viewBox="0 0 12 12">
+                            <path fill="currentColor" d="M6 9L1 4h10z" />
+                        </svg>
+                    </div>
+                    <div class="mobile-dropdown-content">
+                        <a href="#" class="mobile-dropdown-link">👥 Meet the Team</a>
+                        <a href="#" class="mobile-dropdown-link">⭐ Testimonials</a>
+                        <a href="#" class="mobile-dropdown-link">💼 Careers</a>
+                        <a href="#" class="mobile-dropdown-link">📝 Blog</a>
+                    </div>
+                </div>
+
+                <div class="mobile-menu-item">
+                    <a href="#area" class="mobile-link" style="margin-left: 19px;">Service Area</a>
+                </div>
+
+                <div class="mobile-menu-actions">
+                    <a href="tel:+18723142148" class="mobile-phone-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                        </svg>
+                        Call Now
+                    </a>
+                    <a href="#sidebar-form" class="mobile-quote-btn">Get Free Quote</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="/">Home</a>
+                <span>»</span>
+                <span>Residential Moves</span>
+            </div>
+            <h1>Australia's Leading Residential Moving Company</h1>
+            <a href="#sidebar-form" class="hero-cta">Request Free Estimate</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="main-content">
+                <!-- Intro Section -->
+                <div class="intro-section">
+                    <p>Whether you're moving for a new job, starting a family, or downsizing for retirement, our professional residential moving services make all the difference. As trusted local movers in Chicago, we offer a comprehensive relocation experience that covers everything you need to settle comfortably into your new home. Our team handles local household moves within the city and cross country relocations with the same level of expertise and dependability.</p>
+                </div>
+
+                <!-- Full Service Section -->
+                <section>
+                    <h2>Full-Service Residential Movers in Chicago, IL</h2>
+                    <p>Since 2009 we've helped thousands of tenants and homeowners with relocations to new apartments, condos, townhomes and houses. Our proven approach combines affordable pricing with the reliable service needed to make moving day smooth and stress-free. From creating a custom moving plan to unpacking the final box, we work quickly and diligently without cutting corners.</p>
+                    <p>At New City Moving, we take care of every aspect of a residential move. Our movers arrive on time and pack, load and transport items with the care and efficiency your belongings deserve. We also take extra steps to protect your home during the process, preventing scuffs, scratches and marks that could damage walls, floors and doorways.</p>
+                </section>
+
+                <!-- Features Grid -->
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <div class="feature-icon">🏠</div>
+                        <h4>Expert Local Moving</h4>
+                        <p>Specialized in Chicago area moves with knowledge of every neighborhood and building requirement.</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">🚚</div>
+                        <h4>Long Distance Moves</h4>
+                        <p>Cross-country relocations handled with professional care and tracking throughout the journey.</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">📦</div>
+                        <h4>Professional Packing</h4>
+                        <p>High-quality materials and expert techniques to protect your valuable belongings.</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">🛡️</div>
+                        <h4>Home Protection</h4>
+                        <p>Extra care to prevent damage to walls, floors, and doorways during the move.</p>
+                    </div>
+                </div>
+
+                <!-- Packing and Storage Section -->
+                <section>
+                    <h2>Packing and Storage for Residential Moves</h2>
+                    <p>With extensive experience in moving, our team has refined the packing and unpacking process. Our secure packing services protect items regardless of how far they need to travel. Here's what to expect from the residential packing process:</p>
+                    
+                    <div class="packing-list">
+                        <ul>
+                            <li>High-quality packing supplies for household items</li>
+                            <li>Protects valuables for long-distance transport</li>
+                            <li>Convenient packing for families and professionals</li>
+                            <li>Full or partial packing offers flexibility for residential moving</li>
+                        </ul>
+                    </div>
+
+                    <p>Along with professional packing, we offer safe and flexible storage solutions for times when your new home isn't quite ready or is undergoing renovations. We'll securely store your belongings for as long as needed, then deliver them to your new residence at a time that suits your schedule.</p>
+                </section>
+
+                <!-- FAQ Section -->
+                <section class="faq-section">
+                    <h2>Common Questions About Residential Movers</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How long does a residential move usually take?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                The time it takes for a residential move depends on the number of possessions and the distance to the location. Most local moves, such as those involving a single-family house, are completed in a single day. Long-distance moves typically take one to three days, depending on distance, route and logistics.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Can residential movers safely handle fragile items?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Residential movers can safely handle fragile items using skilled packing methods and heavy-duty packing materials, along with professional equipment and proper loading techniques. Moving items such as art, antiques, glassware and jewelry often involve custom crating, bubble wrap, and padded moving blankets for maximum protection.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What happens if something is damaged during a residential move?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Reputable residential movers typically offer various types of valuation coverage and will help you file a claim if any items are damaged. While damage is rare, valuation coverage protects you in case something unexpected happens during the move.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA Section -->
+                <div class="cta-section">
+                    <h2>Best-Rated Residential Movers in Chicago, IL</h2>
+                    <p>For support with residential moving services in Chicago and throughout the country, speak with the relocation specialists at New City Moving. We provide expert packing, transportation and storage solutions for individuals and families.</p>
+                    <div class="cta-buttons">
+                        <a href="tel:+18723142148" class="cta-btn cta-btn-primary">Call 872-314-2148</a>
+                        <a href="#sidebar-form" class="cta-btn cta-btn-secondary">Get Free Quote</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-form" id="sidebar-form">
+                    <h3>Get Your Free Estimate</h3>
+                    <p>Fast, accurate quotes in under 60 seconds</p>
+                    <form>
+                        <div class="form-field">
+                            <input type="text" placeholder="Full Name *" required>
+                        </div>
+                        <div class="form-field">
+                            <input type="email" placeholder="Email Address *" required>
+                        </div>
+                        <div class="form-field">
+                            <input type="tel" placeholder="Phone Number *" required>
+                        </div>
+                        <div class="form-field">
+                            <input type="text" placeholder="Moving From *" required>
+                        </div>
+                        <div class="form-field">
+                            <input type="text" placeholder="Moving To *" required>
+                        </div>
+                        <div class="form-field">
+                            <input type="date" required>
+                        </div>
+                        <div class="form-field">
+                            <select required>
+                                <option value="">Move Size</option>
+                                <option>Studio</option>
+                                <option>1 Bedroom</option>
+                                <option>2 Bedrooms</option>
+                                <option>3 Bedrooms</option>
+                                <option>4+ Bedrooms</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <textarea placeholder="Additional Information"></textarea>
+                        </div>
+                        <button type="submit" class="submit-form-btn">Get Free Estimate</button>
+                    </form>
+                </div>
+
+                <div class="service-links">
+                    <h4>Moving Services</h4>
+                    <ul>
+                        <li><a href="#">Residential Moves</a></li>
+                        <li><a href="#">Senior Moves</a></li>
+                        <li><a href="#">Apartment Movers</a></li>
+                        <li><a href="#">Long Distance Moves</a></li>
+                        <li><a href="#">Interstate Moves</a></li>
+                        <li><a href="#">Office Moving</a></li>
+                        <li><a href="#">Last-Minute Movers</a></li>
+                        <li><a href="#">Loading/Unloading</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Review Section -->
+    <section class="review-section">
+        <div class="container">
+            <h2>What Customers Say About Us</h2>
+            <div class="review-platforms">
+                <div class="review-platform">
+                    <h3>Yelp</h3>
+                    <p>★★★★★</p>
+                    <p>1040 reviews</p>
+                </div>
+                <div class="review-platform">
+                    <h3>Google</h3>
+                    <p>★★★★★</p>
+                    <p>2100 reviews</p>
+                </div>
+                <div class="review-platform">
+                    <h3>Angie's List</h3>
+                    <p>★★★★★</p>
+                    <p>425 reviews</p>
+                </div>
+                <div class="review-platform">
+                    <h3>Facebook</h3>
+                    <p>★★★★★</p>
+                    <p>112 reviews</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="images/logo.png"
+                    alt="New City Moving Logo" class="footer-logo">
+                <p class="footer-tagline">Professional moving and storage solutions for Chicago and beyond since 1991.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                    <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></a>
+                    <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Moving Services</h3>
+                <ul>
+                    <li><a href="#">Local Moves</a></li>
+                    <li><a href="#">Long Distance Moves</a></li>
+                    <li><a href="#">Business Moves</a></li>
+                    <li><a href="#">Loading/Unloading Only</a></li>
+                    <li><a href="#">Protection & Insurance</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Storage Services</h3>
+                <ul>
+                    <li><a href="#">Full Service Storage</a></li>
+                    <li><a href="#">Mobile Storage</a></li>
+                    <li><a href="#">Document Storage</a></li>
+                    <li><a href="#">Climate Controlled</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Get In Touch</h3>
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span>2929 N Campbell Ave<br>Chicago, IL 60618</span>
+                </div>
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <a href="tel:7734890600">(773) 489-0600</a>
+                </div>
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <a href="mailto:info@newcitymoving.com">info@newcitymoving.com</a>
+                </div>
+                <p class="license-info">New City Moving & Storage LLC<br>IL ICC #158051 MC-695430</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 New City Moving & Storage LLC. All Rights Reserved</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <span class="separator">•</span>
+                <a href="#">Terms of Service</a>
+                <span class="separator">•</span>
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="JS/index.js"></script>
+</body>
+</html>

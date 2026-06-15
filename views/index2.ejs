@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New City Moving — Chicago's Premier Movers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET & BASE ─── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --navy: #0A1628;
+  --navy-mid: #1E3A5F;
+  --navy-light: #2A4F7A;
+  --cream: #F8F6F2;
+  --white: #ffffff;
+  --amber: #FF6B35;
+  --amber-dark: #E85A24;
+  --gold: #D4A853;
+  --text-dark: #0A1628;
+  --text-mid: #4A5568;
+  --text-light: #9AA3B0;
+  --border: rgba(255,255,255,0.1);
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+  background: var(--cream);
+  overflow-x: hidden;
+}
+html::-webkit-scrollbar { width: 6px; }
+html::-webkit-scrollbar-track { background: var(--navy); }
+html::-webkit-scrollbar-thumb { background: var(--amber); border-radius: 3px; }
+
+/* ─── HEADER ─── */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  transition: all 0.4s ease;
+  padding: 0;
+}
+.header.scrolled {
+  background: rgba(10,22,40,0.97);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+}
+.header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  gap: 24px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.logo-mark {
+  width: 44px; height: 44px;
+  background: var(--amber);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 20px;
+  color: white;
+}
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+.logo-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: white;
+  letter-spacing: 0.3px;
+}
+.logo-sub {
+  font-size: 10px;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 3px;
+}
+.main-nav { display: flex; align-items: center; gap: 4px; }
+.nav-link {
+  padding: 8px 16px;
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.2s;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+.nav-link:hover { color: white; background: rgba(255,255,255,0.08); }
+
+/* Dropdown */
+.nav-item { position: relative; }
+.nav-link.has-arrow::after {
+  content: '▾';
+  margin-left: 4px;
+  font-size: 11px;
+  opacity: 0.6;
+}
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  background: rgba(10,22,40,0.98);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 8px;
+  min-width: 220px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+.nav-item:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.mega-menu {
+  min-width: 640px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  padding: 16px;
+}
+.mega-col h5 {
+  font-size: 10px;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 4px 12px 12px;
+}
+.drop-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.75);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+.drop-link:hover {
+  background: rgba(255,107,53,0.12);
+  color: white;
+  transform: translateX(3px);
+}
+.drop-icon {
+  width: 32px; height: 32px;
+  background: rgba(255,107,53,0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+.drop-link:hover .drop-icon { background: var(--amber); }
+.drop-info strong { display: block; font-size: 13px; color: white; }
+.drop-info span { font-size: 11px; color: rgba(255,255,255,0.45); }
+
+.header-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.btn-call {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.btn-call:hover { border-color: white; background: rgba(255,255,255,0.05); }
+.btn-call svg { color: var(--gold); }
+.btn-quote {
+  padding: 10px 22px;
+  background: var(--amber);
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.btn-quote:hover { background: var(--amber-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(255,107,53,0.35); }
+
+/* Mobile toggle */
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+.mobile-toggle span {
+  width: 24px; height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s;
+  display: block;
+}
+.mobile-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.mobile-toggle.open span:nth-child(2) { opacity: 0; }
+.mobile-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+/* Mobile menu */
+.mobile-menu {
+  position: fixed;
+  top: 80px; left: 0; right: 0;
+  background: rgba(10,22,40,0.99);
+  backdrop-filter: blur(20px);
+  max-height: 0;
+  overflow-y: auto;
+  transition: max-height 0.4s ease;
+  z-index: 999;
+}
+.mobile-menu.open { max-height: calc(100dvh - 80px); }
+.mobile-nav { padding: 16px 24px 32px; }
+.mob-section { border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 4px; }
+.mob-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 14px 0;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+}
+.mob-trigger svg { transition: transform 0.3s; opacity: 0.5; }
+.mob-section.active .mob-trigger svg { transform: rotate(180deg); }
+.mob-sub {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.mob-section.active .mob-sub { max-height: 500px; }
+.mob-sub a {
+  display: block;
+  padding: 10px 0 10px 16px;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 14px;
+  border-left: 2px solid transparent;
+  margin-bottom: 2px;
+  transition: all 0.2s;
+}
+.mob-sub a:hover { color: white; border-left-color: var(--amber); padding-left: 20px; }
+.mob-direct {
+  display: block;
+  padding: 14px 0;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.mob-actions { padding-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+.mob-btn-call {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+}
+.mob-btn-quote {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  background: var(--amber);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ─── TICKER ─── */
+.ticker-wrap {
+  background: var(--amber);
+  overflow: hidden;
+  padding: 10px 0;
+}
+.ticker-track {
+  display: flex;
+  gap: 60px;
+  animation: ticker 30s linear infinite;
+  width: max-content;
+}
+.ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.ticker-dot { width: 4px; height: 4px; background: rgba(255,255,255,0.5); border-radius: 50%; }
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100dvh;
+  background: linear-gradient(135deg, var(--navy) 0%, #0D1F3C 50%, #162A4A 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 80px;
+}
+.hero-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-glow {
+  position: absolute;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,107,53,0.12) 0%, transparent 70%);
+  top: -100px; right: -100px;
+  pointer-events: none;
+}
+.hero-glow-2 {
+  position: absolute;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212,168,83,0.08) 0%, transparent 70%);
+  bottom: 100px; left: 50px;
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 32px;
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 60px;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(212,168,83,0.12);
+  border: 1px solid rgba(212,168,83,0.3);
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.hero-badge::before { content: '★'; }
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(40px, 5.5vw, 72px);
+  font-weight: 900;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--amber);
+  position: relative;
+}
+.hero-desc {
+  font-size: 17px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  max-width: 540px;
+  margin-bottom: 40px;
+}
+.hero-stats {
+  display: flex;
+  gap: 36px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+.hero-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 900;
+  color: white;
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 28px;
+  background: var(--amber);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover { background: var(--amber-dark); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255,107,53,0.4); }
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 28px;
+  background: transparent;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  transition: all 0.2s;
+}
+.btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.05); }
+
+/* Quote Form Card */
+.quote-card {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 24px;
+  padding: 36px 32px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+}
+.quote-card-header { margin-bottom: 28px; }
+.quote-card-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--amber);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.quote-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: white;
+  line-height: 1.2;
+}
+.quote-form { display: flex; flex-direction: column; gap: 0; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.field {
+  position: relative;
+  margin-bottom: 14px;
+}
+.field.full { grid-column: 1 / -1; }
+.field input, .field select, .field textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  color: white;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  transition: all 0.2s;
+  appearance: none;
+}
+.field input::placeholder, .field select option { color: rgba(255,255,255,0.4); }
+.field select { color: rgba(255,255,255,0.6); cursor: pointer; }
+.field select option { background: #0A1628; color: white; }
+.field input:focus, .field select:focus {
+  border-color: var(--amber);
+  background: rgba(255,107,53,0.06);
+}
+.field input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); opacity: 0.5; cursor: pointer; }
+.field label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+.btn-submit {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--amber), #FF8C5A);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+.btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(255,107,53,0.45); }
+.form-note {
+  text-align: center;
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+  margin-top: 12px;
+}
+
+/* ─── REVIEW STRIP ─── */
+.review-strip {
+  background: var(--navy);
+  padding: 28px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.review-strip-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.review-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.review-platform-name {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.review-count {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+}
+.review-stars { color: var(--gold); font-size: 12px; letter-spacing: 2px; }
+.review-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.08); }
+
+/* ─── SERVICES SECTION ─── */
+.section { padding: 100px 0; }
+.section-inner { max-width: 1400px; margin: 0 auto; padding: 0 32px; }
+.section-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--amber);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 900;
+  color: var(--navy);
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+}
+.section-title span { color: var(--amber); }
+.section-desc {
+  font-size: 17px;
+  color: var(--text-mid);
+  line-height: 1.75;
+  max-width: 660px;
+  margin-bottom: 60px;
+}
+
+/* Services grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.service-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: all 0.3s;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+.service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.12); }
+.service-img {
+  height: 190px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 56px;
+  position: relative;
+  overflow: hidden;
+}
+.service-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(255,107,53,0.15), transparent);
+}
+.service-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+.service-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background: rgba(255,107,53,0.08);
+  color: var(--amber);
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.service-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.service-card p {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.65;
+  flex: 1;
+}
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--amber);
+  margin-top: 18px;
+  text-decoration: none;
+  transition: gap 0.2s;
+}
+.service-card:hover .service-link { gap: 10px; }
+
+/* ─── WHY US ─── */
+.why-section {
+  background: var(--navy);
+  padding: 100px 0;
+}
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.why-left .section-title { color: white; }
+.why-left .section-desc { color: rgba(255,255,255,0.55); margin-bottom: 48px; }
+.why-features { display: flex; flex-direction: column; gap: 24px; }
+.why-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.why-icon {
+  width: 48px; height: 48px;
+  background: rgba(255,107,53,0.12);
+  border: 1px solid rgba(255,107,53,0.2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.why-feature-title {
+  font-weight: 700;
+  color: white;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+.why-feature-desc { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+.why-right { position: relative; }
+.why-image-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+  padding: 40px;
+}
+.why-nums-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.why-num-item { text-align: center; }
+.why-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--amber);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.why-num-label { font-size: 13px; color: rgba(255,255,255,0.45); font-weight: 500; line-height: 1.4; }
+.why-num-divider { width: 1px; background: rgba(255,255,255,0.06); }
+.why-cta-card {
+  margin-top: 24px;
+  background: linear-gradient(135deg, rgba(255,107,53,0.12), rgba(255,107,53,0.04));
+  border: 1px solid rgba(255,107,53,0.2);
+  border-radius: 16px;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.why-cta-text { font-size: 15px; font-weight: 600; color: white; }
+.why-cta-sub { font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 2px; }
+
+/* ─── PROCESS ─── */
+.process-section { background: var(--cream); padding: 100px 0; }
+.process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(0,0,0,0.06); border-radius: 20px; overflow: hidden; margin-top: 60px; }
+.process-step {
+  background: white;
+  padding: 40px 32px;
+  position: relative;
+  transition: all 0.3s;
+}
+.process-step:hover { background: var(--navy); }
+.step-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 60px;
+  font-weight: 900;
+  color: rgba(0,0,0,0.05);
+  line-height: 1;
+  margin-bottom: -10px;
+  transition: color 0.3s;
+}
+.process-step:hover .step-num { color: rgba(255,255,255,0.05); }
+.step-icon { font-size: 32px; margin-bottom: 16px; }
+.step-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 12px;
+  transition: color 0.3s;
+}
+.process-step:hover .step-title { color: white; }
+.step-desc { font-size: 14px; color: var(--text-mid); line-height: 1.65; transition: color 0.3s; }
+.process-step:hover .step-desc { color: rgba(255,255,255,0.55); }
+
+/* ─── TESTIMONIAL ─── */
+.testimonial-section { background: #F0EDE6; padding: 100px 0; }
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
+.testimonial-card {
+  background: white;
+  border-radius: 20px;
+  padding: 36px 32px;
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: all 0.3s;
+  position: relative;
+}
+.testimonial-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); }
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: 20px; right: 28px;
+  font-family: 'Playfair Display', serif;
+  font-size: 80px;
+  color: rgba(255,107,53,0.08);
+  line-height: 1;
+  font-weight: 900;
+}
+.test-stars { color: var(--gold); font-size: 14px; letter-spacing: 2px; margin-bottom: 18px; }
+.test-text { font-size: 15px; color: var(--text-mid); line-height: 1.75; margin-bottom: 24px; font-style: italic; }
+.test-author { display: flex; align-items: center; gap: 14px; }
+.test-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--amber), var(--gold));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.test-name { font-weight: 700; color: var(--navy); font-size: 14px; }
+.test-location { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+
+/* ─── CTA STRIP ─── */
+.cta-strip {
+  background: linear-gradient(135deg, var(--amber) 0%, #E85A24 100%);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+.cta-strip::before {
+  content: '';
+  position: absolute;
+  right: -60px; top: -60px;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+}
+.cta-strip::after {
+  content: '';
+  position: absolute;
+  left: -80px; bottom: -80px;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+}
+.cta-strip-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+.cta-strip h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 900;
+  color: white;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+.cta-strip p { font-size: 16px; color: rgba(255,255,255,0.75); margin-top: 8px; }
+.cta-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 28px;
+  background: white;
+  color: var(--amber);
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+.btn-outline-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 28px;
+  background: transparent;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  border: 2px solid rgba(255,255,255,0.35);
+  transition: all 0.2s;
+}
+.btn-outline-white:hover { background: rgba(255,255,255,0.1); border-color: white; }
+
+/* ─── FOOTER ─── */
+.footer {
+  background: linear-gradient(180deg, var(--navy) 0%, #060F1C 100%);
+  padding: 80px 0 0;
+}
+.footer-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1.3fr;
+  gap: 50px;
+  padding-bottom: 60px;
+}
+.footer-brand-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.7;
+  margin: 20px 0 28px;
+  max-width: 300px;
+}
+.social-row { display: flex; gap: 10px; }
+.social-btn {
+  width: 40px; height: 40px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: all 0.2s;
+  font-size: 16px;
+}
+.social-btn:hover { background: var(--amber); border-color: var(--amber); color: white; }
+.footer-col h4 {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: all 0.2s;
+  display: inline-block;
+}
+.footer-col ul li a:hover { color: white; transform: translateX(4px); }
+.contact-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+}
+.contact-line svg { color: var(--amber); flex-shrink: 0; margin-top: 1px; }
+.contact-line a { color: rgba(255,255,255,0.5); text-decoration: none; }
+.contact-line a:hover { color: white; }
+.license-badge {
+  margin-top: 24px;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+  line-height: 1.6;
+}
+.footer-bottom {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px 32px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.25); }
+.footer-bottom-links { display: flex; gap: 6px; align-items: center; }
+.footer-bottom-links a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.25);
+  text-decoration: none;
+  padding: 0 10px;
+  transition: color 0.2s;
+}
+.footer-bottom-links a:hover { color: rgba(255,255,255,0.6); }
+.footer-bottom-links span { color: rgba(255,255,255,0.1); }
+
+/* ─── ANIMATIONS ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1200px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { gap: 50px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 960px) {
+  .main-nav { display: none; }
+  .mobile-toggle { display: flex; }
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .why-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .section { padding: 70px 0; }
+  .section-inner { padding: 0 20px; }
+  .hero-inner { padding: 40px 20px; }
+  .header-inner { padding: 0 20px; }
+  .btn-call .call-text { display: none; }
+  .services-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; padding: 0 20px 48px; }
+  .footer-bottom { padding: 20px; flex-direction: column; text-align: center; }
+  .cta-strip-inner { flex-direction: column; text-align: center; }
+  .cta-btns { justify-content: center; }
+  .hero-stats { gap: 20px; }
+  .review-strip-inner { justify-content: center; gap: 12px; }
+  .review-divider { display: none; }
+  .form-row { grid-template-columns: 1fr; }
+  .why-nums-grid { grid-template-columns: 1fr 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── HEADER ─── -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <div class="logo-mark">NC</div>
+      <div class="logo-text">
+        <span class="logo-name">New City Moving</span>
+        <span class="logo-sub">Est. 1991 · Chicago</span>
+      </div>
+    </a>
+
+    <nav class="main-nav">
+      <div class="nav-item">
+        <a href="#services" class="nav-link has-arrow">Moving Services</a>
+        <div class="dropdown-menu mega-menu">
+          <div class="mega-col">
+            <h5>Local</h5>
+            <a href="/ResidentialMoves" class="drop-link"><span class="drop-icon">🏠</span><div class="drop-info"><strong>Residential Moves</strong><span>Professional home moving</span></div></a>
+            <a href="/Apartmentmoves" class="drop-link"><span class="drop-icon">🏢</span><div class="drop-info"><strong>Apartment Movers</strong><span>City specialists</span></div></a>
+            <a href="/Seniormoves" class="drop-link"><span class="drop-icon">👴</span><div class="drop-info"><strong>Senior Moves</strong><span>Compassionate care</span></div></a>
+          </div>
+          <div class="mega-col">
+            <h5>Distance</h5>
+            <a href="/LongDistance" class="drop-link"><span class="drop-icon">🚚</span><div class="drop-info"><strong>Long Distance</strong><span>Cross-country moves</span></div></a>
+            <a href="/InterState" class="drop-link"><span class="drop-icon">🗺️</span><div class="drop-info"><strong>Interstate Moves</strong><span>State-to-state</span></div></a>
+          </div>
+          <div class="mega-col">
+            <h5>Specialty</h5>
+            <a href="#" class="drop-link"><span class="drop-icon">💼</span><div class="drop-info"><strong>Office Moving</strong><span>Business relocation</span></div></a>
+            <a href="#" class="drop-link"><span class="drop-icon">⚡</span><div class="drop-info"><strong>Last-Minute</strong><span>Emergency service</span></div></a>
+            <a href="#" class="drop-link"><span class="drop-icon">📦</span><div class="drop-info"><strong>Load & Unload</strong><span>Labor-only service</span></div></a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a href="#packing" class="nav-link">Packing</a></div>
+      <div class="nav-item">
+        <a href="#storage" class="nav-link has-arrow">Storage</a>
+        <div class="dropdown-menu">
+          <a href="#" class="drop-link"><span class="drop-icon">📦</span><div class="drop-info"><strong>Full Service</strong><span>Complete solutions</span></div></a>
+          <a href="#" class="drop-link"><span class="drop-icon">⏱️</span><div class="drop-info"><strong>Short-Term</strong><span>Flexible options</span></div></a>
+          <a href="#" class="drop-link"><span class="drop-icon">📅</span><div class="drop-info"><strong>Long-Term</strong><span>Secure facilities</span></div></a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#about" class="nav-link has-arrow">About</a>
+        <div class="dropdown-menu">
+          <a href="#" class="drop-link"><span class="drop-icon">👥</span><div class="drop-info"><strong>Meet the Team</strong><span>Our experts</span></div></a>
+          <a href="#" class="drop-link"><span class="drop-icon">⭐</span><div class="drop-info"><strong>Testimonials</strong><span>Happy customers</span></div></a>
+          <a href="#" class="drop-link"><span class="drop-icon">📝</span><div class="drop-info"><strong>Blog</strong><span>Tips & news</span></div></a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="#area" class="nav-link">Service Area</a></div>
+    </nav>
+
+    <div class="header-actions">
+      <a href="tel:+18723142148" class="btn-call">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        <span class="call-text">1-872-314-2148</span>
+      </a>
+      <a href="#quote" class="btn-quote">Free Quote</a>
+    </div>
+
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-nav">
+      <div class="mob-section" id="mob1">
+        <button class="mob-trigger" onclick="toggleMob('mob1')">
+          Moving Services
+          <svg width="12" height="12" viewBox="0 0 12 12"><path fill="currentColor" d="M6 9L1 4h10z"/></svg>
+        </button>
+        <div class="mob-sub">
+          <a href="/ResidentialMoves">🏠 Residential Moves</a>
+          <a href="/Apartmentmoves">🏢 Apartment Movers</a>
+          <a href="/Seniormoves">👴 Senior Moves</a>
+          <a href="/LongDistance">🚚 Long Distance</a>
+          <a href="/InterState">🗺️ Interstate Moves</a>
+          <a href="#">💼 Office Moving</a>
+          <a href="#">⚡ Last-Minute</a>
+          <a href="#">📦 Load & Unload</a>
+        </div>
+      </div>
+      <a href="#packing" class="mob-direct" onclick="closeMob()">Packing Services</a>
+      <div class="mob-section" id="mob2">
+        <button class="mob-trigger" onclick="toggleMob('mob2')">
+          Storage
+          <svg width="12" height="12" viewBox="0 0 12 12"><path fill="currentColor" d="M6 9L1 4h10z"/></svg>
+        </button>
+        <div class="mob-sub">
+          <a href="#">📦 Full Service Storage</a>
+          <a href="#">⏱️ Short-Term</a>
+          <a href="#">📅 Long-Term</a>
+        </div>
+      </div>
+      <div class="mob-section" id="mob3">
+        <button class="mob-trigger" onclick="toggleMob('mob3')">
+          About
+          <svg width="12" height="12" viewBox="0 0 12 12"><path fill="currentColor" d="M6 9L1 4h10z"/></svg>
+        </button>
+        <div class="mob-sub">
+          <a href="#">👥 Meet the Team</a>
+          <a href="#">⭐ Testimonials</a>
+          <a href="#">📝 Blog</a>
+        </div>
+      </div>
+      <a href="#area" class="mob-direct" onclick="closeMob()">Service Area</a>
+      <div class="mob-actions">
+        <a href="tel:+18723142148" class="mob-btn-call">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          Call 1-872-314-2148
+        </a>
+        <a href="#quote" class="mob-btn-quote" onclick="closeMob()">Get Free Quote</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ─── TICKER ─── -->
+<div class="ticker-wrap" style="margin-top: 80px;">
+  <div class="ticker-track">
+    <span class="ticker-item">⭐ Rated #1 in Chicago <span class="ticker-dot"></span></span>
+    <span class="ticker-item">🚚 70,000+ Moves Completed <span class="ticker-dot"></span></span>
+    <span class="ticker-item">🛡️ Fully Licensed & Insured <span class="ticker-dot"></span></span>
+    <span class="ticker-item">💳 Afterpay Available — Move Now, Pay Later <span class="ticker-dot"></span></span>
+    <span class="ticker-item">📞 Same-Day Quotes Available <span class="ticker-dot"></span></span>
+    <span class="ticker-item">⭐ Rated #1 in Chicago <span class="ticker-dot"></span></span>
+    <span class="ticker-item">🚚 70,000+ Moves Completed <span class="ticker-dot"></span></span>
+    <span class="ticker-item">🛡️ Fully Licensed & Insured <span class="ticker-dot"></span></span>
+    <span class="ticker-item">💳 Afterpay Available — Move Now, Pay Later <span class="ticker-dot"></span></span>
+    <span class="ticker-item">📞 Same-Day Quotes Available <span class="ticker-dot"></span></span>
+  </div>
+</div>
+
+<!-- ─── HERO ─── -->
+<section class="hero" id="quote">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">Chicago's Most Trusted Movers Since 1991</div>
+      <h1>Move with<br><em>confidence.</em><br>Move with us.</h1>
+      <p class="hero-desc">Chicago's highest-rated full-service moving company. Over 70,000 families trust New City Moving for seamless, stress-free relocations — local or long distance.</p>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">70K+</div>
+          <div class="hero-stat-label">Moves Completed</div>
+        </div>
+        <div style="width:1px; background:rgba(255,255,255,0.1);"></div>
+        <div>
+          <div class="hero-stat-num">4.9★</div>
+          <div class="hero-stat-label">Avg Rating</div>
+        </div>
+        <div style="width:1px; background:rgba(255,255,255,0.1);"></div>
+        <div>
+          <div class="hero-stat-num">35yr</div>
+          <div class="hero-stat-label">In Business</div>
+        </div>
+      </div>
+      <div class="hero-ctas">
+        <a href="tel:+18723142148" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          Call Now
+        </a>
+        <a href="#services" class="btn-secondary">View Services →</a>
+      </div>
+    </div>
+
+    <!-- Quote Form -->
+    <div class="quote-card">
+      <div class="quote-card-header">
+        <div class="quote-card-eyebrow">Free Estimate</div>
+        <h2>Get your instant<br>moving quote</h2>
+      </div>
+      <form class="quote-form" onsubmit="/api/quotes">
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Jane Smith" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="(312) 555-0100" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="jane@example.com" required>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="from">Moving From</label>
+            <input type="text" id="from" placeholder="City or ZIP" required>
+          </div>
+          <div class="field">
+            <label for="to">Moving To</label>
+            <input type="text" id="to" placeholder="City or ZIP" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="date">Move Date</label>
+            <input type="date" id="date" required>
+          </div>
+          <div class="field">
+            <label for="size">Home Size</label>
+            <select id="size" required>
+              <option value="" disabled selected>Select size</option>
+              <option>Studio</option>
+              <option>1 Bedroom</option>
+              <option>2 Bedrooms</option>
+              <option>3 Bedrooms</option>
+              <option>4+ Bedrooms</option>
+              <option>Business Move</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn-submit">
+          Get Free Estimate
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/></svg>
+        </button>
+        <p class="form-note">🔒 No spam. No hidden fees. Instant response.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ─── REVIEW STRIP ─── -->
+<div class="review-strip">
+  <div class="review-strip-inner">
+    <div class="review-item">
+      <div>
+        <div class="review-platform-name">Yelp</div>
+        <div class="review-stars">★★★★★</div>
+      </div>
+      <div class="review-count">1,040</div>
+    </div>
+    <div class="review-divider"></div>
+    <div class="review-item">
+      <div>
+        <div class="review-platform-name">Google</div>
+        <div class="review-stars">★★★★★</div>
+      </div>
+      <div class="review-count">2,100</div>
+    </div>
+    <div class="review-divider"></div>
+    <div class="review-item">
+      <div>
+        <div class="review-platform-name">Angie's List</div>
+        <div class="review-stars">★★★★★</div>
+      </div>
+      <div class="review-count">425</div>
+    </div>
+    <div class="review-divider"></div>
+    <div class="review-item">
+      <div>
+        <div class="review-platform-name">Facebook</div>
+        <div class="review-stars">★★★★★</div>
+      </div>
+      <div class="review-count">112</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── SERVICES ─── -->
+<section class="section" id="services">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-eyebrow">What We Offer</div>
+      <h2 class="section-title">Moving services built<br>for <span>every situation</span></h2>
+      <p class="section-desc">From studio apartments to corporate offices, we handle every move with the same obsessive care. Our 400+ relocation experts and fleet of 130+ trucks are ready.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-img">🏠</div>
+        <div class="service-body">
+          <span class="service-tag">Local · Most Popular</span>
+          <h3>Residential Moves</h3>
+          <p>From a single room to a sprawling home, our residential crews handle your move with care and efficiency. Same-day and last-minute availability.</p>
+          <a href="/ResidentialMoves" class="service-link">Learn more <span>→</span></a>
+        </div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-img">🚚</div>
+        <div class="service-body">
+          <span class="service-tag">Interstate · Long Distance</span>
+          <h3>Long Distance Moves</h3>
+          <p>Relocating out of state? Our long-distance specialists handle cross-country moves with full insurance options and real-time tracking.</p>
+          <a href="/LongDistance" class="service-link">Learn more <span>→</span></a>
+        </div>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-img">📦</div>
+        <div class="service-body">
+          <span class="service-tag">Add-On Service</span>
+          <h3>Packing & Unpacking</h3>
+          <p>Our crews pack everything — from a kitchen drawer to a full estate — using professional materials. Fragile items handled with expert care.</p>
+          <a href="#packing" class="service-link">Learn more <span>→</span></a>
+        </div>
+      </div>
+      <div class="service-card reveal reveal-delay-4">
+        <div class="service-img">🏢</div>
+        <div class="service-body">
+          <span class="service-tag">Commercial</span>
+          <h3>Office Relocations</h3>
+          <p>Minimal disruption, maximum efficiency. We coordinate commercial moves around your schedule — evenings and weekends available.</p>
+          <a href="#" class="service-link">Learn more <span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY US ─── -->
+<section class="why-section" id="about">
+  <div class="section-inner">
+    <div class="why-grid">
+      <div class="why-left reveal">
+        <div class="section-eyebrow">Why New City</div>
+        <h2 class="section-title" style="color:white;">We treat your home<br>like it's <span>our own</span></h2>
+        <p class="section-desc" style="color:rgba(255,255,255,0.5);">We handpick every person who answers our phones and every mover who shows up at your door. No shortcuts. No mystery crews.</p>
+        <div class="why-features">
+          <div class="why-feature">
+            <div class="why-icon">🔍</div>
+            <div>
+              <div class="why-feature-title">Background-Checked Crew</div>
+              <div class="why-feature-desc">Every single mover passes a comprehensive background check before they enter your home.</div>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-icon">🎓</div>
+            <div>
+              <div class="why-feature-title">Rigorous Training Program</div>
+              <div class="why-feature-desc">Only 4 companies in Illinois put movers through our level of hands-on training before field work.</div>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-icon">💳</div>
+            <div>
+              <div class="why-feature-title">Move Now, Pay Later</div>
+              <div class="why-feature-desc">Afterpay available. Spread your move cost over installments with zero interest options.</div>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-icon">📋</div>
+            <div>
+              <div class="why-feature-title">No Hidden Fees — Ever</div>
+              <div class="why-feature-desc">Your quote is your price. We are transparent from first call to final box — zero surprises.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-right reveal reveal-delay-2">
+        <div class="why-image-card">
+          <div class="why-nums-grid">
+            <div class="why-num-item">
+              <div class="why-num">70K+</div>
+              <div class="why-num-label">Successful moves completed</div>
+            </div>
+            <div class="why-num-item">
+              <div class="why-num">130+</div>
+              <div class="why-num-label">Moving trucks in our fleet</div>
+            </div>
+            <div class="why-num-item">
+              <div class="why-num">400+</div>
+              <div class="why-num-label">Trained relocation experts</div>
+            </div>
+            <div class="why-num-item">
+              <div class="why-num">50%</div>
+              <div class="why-num-label">Of moves are repeat customers</div>
+            </div>
+          </div>
+        </div>
+        <div class="why-cta-card">
+          <div>
+            <div class="why-cta-text">Ready to get started?</div>
+            <div class="why-cta-sub">Get a quote in under 60 seconds</div>
+          </div>
+          <a href="#quote" class="btn-primary" style="flex-shrink:0;">Get Quote →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROCESS ─── -->
+<section class="process-section">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-eyebrow">How It Works</div>
+      <h2 class="section-title">Four steps to a<br><span>perfect move</span></h2>
+    </div>
+    <div class="process-steps reveal">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-icon">📞</div>
+        <div class="step-title">Get Your Quote</div>
+        <p class="step-desc">Fill out our quick form or call us. We'll give you a transparent, binding estimate — no fine print, no surprises.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-icon">📅</div>
+        <div class="step-title">Book Your Date</div>
+        <p class="step-desc">Confirm your move date. We'll assign a dedicated crew and send you a confirmation with all the details.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-icon">📦</div>
+        <div class="step-title">We Pack & Load</div>
+        <p class="step-desc">Our professional crew arrives on time with all materials. We handle every item with care from your first box to the last.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <div class="step-icon">🏡</div>
+        <div class="step-title">Settle In</div>
+        <p class="step-desc">We unload and place everything exactly where you want it. Your new place, ready to live in — from day one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section class="testimonial-section" id="reviews">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-eyebrow">Customer Stories</div>
+      <h2 class="section-title">What our customers<br><span>actually say</span></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">Best service from the time you book through the time you move. Your crew understands first-rate service. You've built an amazing company.</p>
+        <div class="test-author">
+          <div class="test-avatar">JC</div>
+          <div>
+            <div class="test-name">Jennifer Carrington</div>
+            <div class="test-location">Lincoln Park, Chicago</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">The team moved our 3-bedroom house in record time. Not a single scratch on any furniture. Worth every penny — will use again without hesitation.</p>
+        <div class="test-author">
+          <div class="test-avatar">MR</div>
+          <div>
+            <div class="test-name">Michael Reyes</div>
+            <div class="test-location">Wicker Park, Chicago</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-3">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">Used New City for our office relocation. They finished ahead of schedule, on a Saturday, so we were fully operational Monday morning. Incredible.</p>
+        <div class="test-author">
+          <div class="test-avatar">SL</div>
+          <div>
+            <div class="test-name">Sarah Lin</div>
+            <div class="test-location">River North, Chicago</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA STRIP ─── -->
+<div class="cta-strip">
+  <div class="cta-strip-inner">
+    <div>
+      <h2>Ready to move?<br>Let's make it easy.</h2>
+      <p>Get your free, no-obligation estimate in 60 seconds.</p>
+    </div>
+    <div class="cta-btns">
+      <a href="#quote" class="btn-white">Get Free Estimate →</a>
+      <a href="tel:+18723142148" class="btn-outline-white">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        Call Us Now
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <a href="/" class="logo" style="margin-bottom:0;">
+        <div class="logo-mark">NC</div>
+        <div class="logo-text">
+          <span class="logo-name">New City Moving</span>
+          <span class="logo-sub">Est. 1991 · Chicago</span>
+        </div>
+      </a>
+      <p class="footer-brand-desc">Professional moving and storage solutions for Chicago and the greater Midwest since 1991. Trusted by over 70,000 families.</p>
+      <div class="social-row">
+        <a href="#" class="social-btn" aria-label="Facebook">f</a>
+        <a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
+        <a href="#" class="social-btn" aria-label="Instagram">◉</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Moving</h4>
+      <ul>
+        <li><a href="#">Local Moves</a></li>
+        <li><a href="#">Long Distance</a></li>
+        <li><a href="#">Interstate</a></li>
+        <li><a href="#">Office Moving</a></li>
+        <li><a href="#">Last-Minute</a></li>
+        <li><a href="#">Load & Unload</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Storage</h4>
+      <ul>
+        <li><a href="#">Full Service</a></li>
+        <li><a href="#">Short-Term</a></li>
+        <li><a href="#">Long-Term</a></li>
+        <li><a href="#">Climate Controlled</a></li>
+        <li><a href="#">Mobile Storage</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="contact-line">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>2929 N Campbell Ave<br>Chicago, IL 60618</span>
+      </div>
+      <div class="contact-line">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.21 15a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.14 4.11h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 11.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 18.92z"/></svg>
+        <a href="tel:7734890600">(773) 489-0600</a>
+      </div>
+      <div class="contact-line">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <a href="mailto:info@newcitymoving.com">info@newcitymoving.com</a>
+      </div>
+      <div class="license-badge">
+        New City Moving & Storage LLC<br>
+        IL ICC #158051 · MC-695430
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 New City Moving & Storage LLC. All Rights Reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <span>•</span>
+      <a href="#">Terms of Service</a>
+      <span>•</span>
+      <a href="#">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ─── HEADER SCROLL ───
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+
+// ─── MOBILE MENU ───
+const toggle = document.getElementById('mobileToggle');
+const menu = document.getElementById('mobileMenu');
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('open');
+  menu.classList.toggle('open');
+  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+});
+function closeMob() {
+  toggle.classList.remove('open');
+  menu.classList.remove('open');
+  document.body.style.overflow = '';
+}
+function toggleMob(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle('active');
+}
+
+// ─── SCROLL REVEAL ───
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+revealEls.forEach(el => io.observe(el));
+
+// ─── FORM SUBMIT ───
+async function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.btn-submit');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch('http://localhost:3000/api/quotes', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: document.getElementById('name').value,
+        phone: document.getElementById('phone').value,
+        email: document.getElementById('email').value,
+        movingFrom: document.getElementById('from').value,
+        movingTo: document.getElementById('to').value,
+        moveDate: document.getElementById('date').value,
+        homeSize: document.getElementById('size').value,
+      }),
+    });
+    const data = await res.json();
+    btn.textContent = data.success ? '✓ Request Sent! We'll call you shortly.' : '✗ Error. Try again.';
+    btn.style.background = data.success ? '#16a34a' : '#dc2626';
+  } catch {
+    btn.textContent = '✗ Network error. Try again.';
+    btn.style.background = '#dc2626';
+    btn.disabled = false;
+  }
+}
+
+// ─── SMOOTH ANCHOR SCROLL ───
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+</script>
+</body>
+</html>
